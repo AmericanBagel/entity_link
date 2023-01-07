@@ -1,0 +1,112 @@
+// Converted to JMC by AmericanBagel (https://github.com/AmericanBagel) from Cloud Wolf's video titled "Link Entities Based on Scoreboards"
+// https://www.youtube.com/watch?v=685vs5hNQmk
+
+new tags.functions(minecraft.load) {
+  "values": [
+    "#load:_private/load"
+  ]
+}
+
+// Lantern Load (https://github.com/LanternMC/Load) compat
+scoreboard players set entity_link load.status 1;
+
+// Define scoreboards
+scoreboard objectives add entity_link dummy;
+
+// A utility predicate intended to filter only linked entities, e.g. `execute as @e[predicate=entity_link:entity_link.linked_entity]
+new predicates(entity_link.linked_entity) {
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": "this",
+    "score": "entity_link"
+  },
+  "range": {
+    "min": 0,
+    "max": 2147483647
+  }
+}
+
+
+new predicates(entity_link.search) {
+    "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": "this",
+    "score": "entity_link"
+  },
+  "range": {
+    "min": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": ".search"
+      },
+      "score": "entity_link"
+    },
+    "max": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": ".search"
+      },
+      "score": "entity_link"
+    }
+  }
+}
+
+class entity_link {
+  // - Tag entity 2 with entity_link.init
+  // - Execute `entity_link.link()` as entity 1
+  // 
+  // Full example:
+  // ```
+  // // Summon second entity
+  // summon rabbit ~ ~ ~ {Tags:["entity_link.init"]};
+  // execute as @e[type=pig,name="Piggeraldo"] run entity_link.link();
+  // 
+  // // Piggeraldo is now linked to rabbit. :^)
+  // ```
+  //
+  // @s = entity 1
+  // @e[tag=entity_link.init] = entity 2
+  function link() {
+      scoreboard players add .global entity_link 1;
+      scoreboard players operation @s entity_link = .global entity_link;
+      scoreboard players operation @e[tag=entity_link.init] entity_link = .global entity_link;
+      tag @e remove entity_link.init;
+  }
+
+  function clean() {
+      tag @e remove entity_link.linked;
+  }
+
+  // - Execute `entity_link.find()` as entity 1 (e.g. `execute as @e[type=pig,name="Piggeraldo"] run entity_link.find();`)
+  // entity_link.linked is the linked entity. @s should be entity 1
+  // 
+  // Full example:
+  // ```
+  // TP linked entity to Piggeraldo
+  // execute as @e[type=pig,name="Piggeraldo"] at @s run {
+  //      // Find linked entity
+  //      entity_link.search();
+  //      
+  //      // Teleport Piggeraldo (entity 1) to entity_link.linked
+  //      tp @e[tag=entity_link.linked] ~ ~ ~;
+  //
+  //      // Remove entity_link.linked tags
+  //      entity_link.clean();
+  //
+  //      // The rabbit is now teleported to Piggeraldo! :^)
+  // }
+  // ```
+  //
+  // @s = entity 1
+  function search() {
+      scoreboard players operation .search entity_link = @s entity_link;
+      tag @s add entity_link.this;
+      execute
+          as @e[predicate=NAMESPACE:entity_link/search]
+          run tag @s add entity_link.linked;
+  }
+}

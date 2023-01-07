@@ -1,0 +1,29 @@
+// Example functions. Look at them, and feel free to tweak them to understand the pack!
+// To compile examples, add the following line to entity_link.jmc (without the '//'):
+// @import examples.jmc
+
+class entity_link {
+    class examples {
+        function summon() {
+            summon pig ~ ~ ~ {CustomName:'{"text":"Piggeraldo"}',Tags:["piggeraldo.init"]};
+            summon rabbit ~ ~ ~ {Tags:["entity_link.init"]};
+            execute as @e[tag=piggeraldo.init] at @s run entity_link.link();
+            tag @e remove piggeraldo.init;
+        }
+
+        function tp() {
+            execute as @e[type=pig,name="Piggeraldo"] at @s run {
+                // Find linked entity
+                entity_link.search();
+
+                // Teleport Piggeraldo (entity 1) to entity_link.linked
+                tp @e[tag=entity_link.linked] ~ ~ ~;
+
+                // Remove entity_link.linked tags
+                entity_link.clean();
+
+                // The rabbit is now teleported to Piggeraldo! :^)
+            }
+        }
+    }
+}

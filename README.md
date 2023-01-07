@@ -23,14 +23,14 @@ Entity linking is incredibly useful. Use-case examples include:
 
 Quite simple, right?
 
-*For an example, see the `entity_link.examples.summon` function in `src/examples.jmc`.*
+*For an example, see the `entity_link.examples.summon` function in [src/examples.jmc](https://github.com/AmericanBagel/entity_link/blob/2471734fb4e53b0f8f34c1df4967e3a0230c09ad/src/examples.jmc).*
 
 #### Searching for linked entity
 - Execute `entity_link.search()` as entity 1
 - Linked entities will now have the `entity_link.linked` tag. Select linked entities using `@e[tag=entity_link.linked]`.
 - Run `entity_link.clean()`. As of writing, the `clean` function just removes the `entity_link.linked` tag. You could remove it manually (`tag @e remove entity_link.linked`), but the `clean` function may change in the future, so use it to be quick and future safe.
 
-*For an example, see the `entity_link.examples.tp` function in `src/examples.jmc`.*
+*For an example, see the `entity_link.examples.tp` function in [src/examples.jmc](https://github.com/AmericanBagel/entity_link/blob/2471734fb4e53b0f8f34c1df4967e3a0230c09ad/src/examples.jmc).*
 
 ### With vanilla mcfunction
 - Tag entity 2 with entity_link.init
@@ -38,14 +38,14 @@ Quite simple, right?
 
 Quite simple, right?
 
-*For an example, see the `entity_link.examples.summon` function in `src/examples.jmc`. JMC syntax is quite easy to convert to mcfuntion syntax. If you can't understand JMC syntax at all, you may refer to `data/entity_link/functions/entity_link/examples/summon. Be warned: the mcfunction files are computer-generated and undocumented!*
+*For an example, see the `entity_link.examples.summon` function in [src/examples.jmc](https://github.com/AmericanBagel/entity_link/blob/2471734fb4e53b0f8f34c1df4967e3a0230c09ad/src/examples.jmc). JMC syntax is quite easy to convert to mcfuntion syntax. If you can't understand JMC syntax at all, you may refer to `data/entity_link/functions/entity_link/examples/summon` after compiling with JMC. Be warned: the mcfunction files are computer-generated and undocumented!*
 
 #### Searching for linked entity
 - Execute `function entity_link:entity_link/search` as entity 1
 - Linked entities will now have the `entity_link.linked` tag. Select linked entities using `@e[tag=entity_link.linked]`.
 - Run `function entity_link:entity_link/clean`. As of writing, the `clean` function just removes the `entity_link.linked` tag. You could remove it manually (`tag @e remove entity_link.linked`), but the `clean` function may change in the future, so use it to be quick and future safe.
 
-*For an example, see the `entity_link.examples.tp` function in `src/examples.jmc`. JMC syntax is quite easy to convert to mcfuntion syntax. If you can't understand JMC syntax at all, you may refer to `data/entity_link/functions/entity_link/examples/tp. Be warned: the mcfunction files are computer-generated and undocumented!*
+*For an example, see the `entity_link.examples.tp` function in [src/examples.jmc](https://github.com/AmericanBagel/entity_link/blob/2471734fb4e53b0f8f34c1df4967e3a0230c09ad/src/examples.jmc). JMC syntax is quite easy to convert to mcfuntion syntax. If you can't understand JMC syntax at all, you may refer to `data/entity_link/functions/entity_link/examples/tp` after compiling with JMC. Be warned: the mcfunction files are computer-generated and undocumented!*
 
 ## Installing
 ### Using [DatapackBuildManager](https://github.com/ICY105/DatapackBuildManager)

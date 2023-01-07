@@ -79,6 +79,7 @@ class entity_link {
 
   function clean() {
       tag @e remove entity_link.linked;
+      tag @e remove entity_link.this;
   }
 
   // - Execute `entity_link.find()` as entity 1 (e.g. `execute as @e[type=pig,name="Piggeraldo"] run entity_link.find();`)
@@ -106,7 +107,7 @@ class entity_link {
       scoreboard players operation .search entity_link = @s entity_link;
       tag @s add entity_link.this;
       execute
-          as @e[predicate=entity_link:entity_link/search]
+          as @e[predicate=entity_link:entity_link/search,tag=!entity_link.this]
           run tag @s add entity_link.linked;
   }
 }

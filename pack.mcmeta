@@ -1,6 +1,6 @@
 {
   "pack": {
     "pack_format": 10,
-    "description": "A library data pack built with JMC which links entities to other entities, see github.com/AmericanBagel/entity_link."
+    "description": "A library data pack built with JMC which links entities to other entities, see github.com/AmericanBagel/entity_link"
   }
 }

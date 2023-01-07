@@ -51,10 +51,14 @@ Quite simple, right?
 ### Using [DatapackBuildManager](https://github.com/ICY105/DatapackBuildManager)
 1. Install [DatapackBuildManager](https://github.com/ICY105/DatapackBuildManager) using its instructions and construct a `dependencies.json` file.
 2. Add the following object to the `dependencies` object in `dependencies.json`:
-    ```{
+   
+```json
+    {
         "name": "Entity Link",
         "url": "https://github.com/AmericanBagel/entity_link"
-      }```
+    }
+```
+
 3. Run `build-datapack.py` based on the instructions in [DatapackBuildManager](https://github.com/ICY105/DatapackBuildManager)'s docs, and Entity Link should be installed!
 
 ### Manually

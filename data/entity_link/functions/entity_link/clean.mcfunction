@@ -1,0 +1,1 @@
+tag @e remove entity_link.linked

@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": "this",
+    "score": "entity_link"
+  },
+  "range": {
+    "min": 0,
+    "max": 2147483647
+  }
+}

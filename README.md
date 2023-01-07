@@ -1,8 +1,8 @@
 # Entity Link
-A library data pack built with JMC which links entities to other entities, based on @CloudWolfYT's video (https://www.youtube.com/watch?v=685vs5hNQmk)
+A library data pack built with JMC which links entities to other entities, based on [CloudWolfYT](https://github.com/CloudWolfYT)'s video (https://www.youtube.com/watch?v=685vs5hNQmk)
 
 ## About
-Entity Link is a library data pack built with [JMC](https://github.com/WingedSeal/jmc/) which links entities to other entities based on @CloudWolfYT's [video](https://www.youtube.com/watch?v=685vs5hNQmk). While @CloudWolfYT's video is great and served largely as a basis for Entity Link, Entity is assembled for you -- no need to figure out how to assemble it. Additionally, Entity Link allows you to link any entity to any other entity; @CloudWolfYT's tutorial, while obviously just a tutorial to get started, only permits linking a player to an entity (the most common use-case).
+Entity Link is a library data pack built with [JMC](https://github.com/WingedSeal/jmc/) which links entities to other entities based on [CloudWolfYT](https://github.com/CloudWolfYT)'s [video](https://www.youtube.com/watch?v=685vs5hNQmk). While [CloudWolfYT](https://github.com/CloudWolfYT)'s video is great and served largely as a basis for Entity Link, Entity is assembled for you -- no need to figure out how to assemble it. Additionally, Entity Link allows you to link any entity to any other entity; [CloudWolfYT](https://github.com/CloudWolfYT)'s tutorial, while obviously just a tutorial to get started, only permits linking a player to an entity (the most common use-case).
 
 # Uses
 Entity linking is incredibly useful. Use-case examples include:

@@ -7,7 +7,7 @@ Entity Link is a library data pack built with [JMC](https://github.com/WingedSea
 # Uses
 Entity linking is incredibly useful. Use-case examples include:
 - Multiplayer-friendly interactions between a player and player-specific entities which last over 1 tick:
-    - Linking a player and a villager for right-click detection to prevent any bugs in multiplayer. The `distance` selector is not a good idea! Just link them~
+    - Linking a player and a villager for right-click detection to prevent any bugs in multiplayer. The `distance` selector is not a good idea! Just link them!
     - Linking a player and an entity for left-click detection.
     - Linking a player and a chest minecart for multiplayer-compatible GUIs.
     - Pets! Perhaps you want to make a pet-related data pack. UUIDs are annoying and require multiple scoreboards and NBT tag reading. Entity linking is more efficient and easier.
@@ -28,7 +28,6 @@ Quite simple, right?
 #### Searching for linked entity
 - Execute `entity_link.search()` as entity 1
 - Linked entities will now have the `entity_link.linked` tag. Select linked entities using `@e[tag=entity_link.linked]`.
-- Run `entity_link.clean()`. As of writing, the `clean` function just removes the `entity_link.linked` tag. You could remove it manually (`tag @e remove entity_link.linked`), but the `clean` function may change in the future, so use it to be quick and future safe.
 
 *For an example, see the `entity_link.examples.tp` function in `src/examples.jmc`.*
 
@@ -42,8 +41,8 @@ Quite simple, right?
 
 #### Searching for linked entity
 - Execute `function entity_link:entity_link/search` as entity 1
-- Linked entities will now have the `entity_link.linked` tag. Select linked entities using `@e[tag=entity_link.linked]`.
-- Run `function entity_link:entity_link/clean`. As of writing, the `clean` function just removes the `entity_link.linked` tag. You could remove it manually (`tag @e remove entity_link.linked`), but the `clean` function may change in the future, so use it to be quick and future safe.
+- The entity you searched from will have the `entity_link.this` tag, and the linked entities will now have the `entity_link.linked` tag. Select linked entities using `@e[tag=entity_link.linked]`. Select the entity you searched from with `@e[tag=entity_link.this]`.
+- Run your functions which deal with your linked entities.
 
 *For an example, see the `entity_link.examples.tp` function in `src/examples.jmc`. JMC syntax is quite easy to convert to mcfuntion syntax. If you can't understand JMC syntax at all, you may refer to `data/entity_link/functions/entity_link/examples/tp. Be warned: the mcfunction files are computer-generated and undocumented!*
 

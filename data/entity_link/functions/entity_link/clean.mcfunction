@@ -1,2 +1,2 @@
-tag @e remove entity_link.this
 tag @e remove entity_link.linked
+tag @e remove entity_link.this

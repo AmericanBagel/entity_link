@@ -19,9 +19,6 @@ class entity_link {
                 // Teleport Piggeraldo (entity 1) to entity_link.linked
                 tp @e[tag=entity_link.linked] ~ ~ ~;
 
-                // Remove entity_link.linked tags
-                entity_link.clean();
-
                 // The rabbit is now teleported to Piggeraldo! :^)
             }
         }

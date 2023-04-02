@@ -95,15 +95,13 @@ class entity_link {
   //      // Teleport Piggeraldo (entity 1) to entity_link.linked
   //      tp @e[tag=entity_link.linked] ~ ~ ~;
   //
-  //      // Remove entity_link.linked tags
-  //      entity_link.clean();
-  //
   //      // The rabbit is now teleported to Piggeraldo! :^)
   // }
   // ```
   //
   // @s = entity 1
   function search() {
+      entity_link.clean(); 
       scoreboard players operation .search entity_link = @s entity_link;
       tag @s add entity_link.this;
       execute
